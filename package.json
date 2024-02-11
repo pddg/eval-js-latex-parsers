@@ -1,0 +1,20 @@
+{
+  "name": "eval-js-latex-parsers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tex2ast": "tex2ast.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@unified-latex/unified-latex-util-parse": "^1.6.0",
+    "commander": "^12.0.0",
+    "latex-utensils": "^6.2.0"
+  }
+}
