@@ -4,9 +4,10 @@ import * as fs from "fs";
 import { Command, Option } from "commander";
 import { parse as parseByLatexUtensils } from "./latex-utensils/parse.js";
 import { parse as parseByUnifiedLatex } from "./unified-latex/parse.js";
+import { parse as parseByUnifiedLatexMinimal } from "./unified-latex-minimal/parse.js";
 
 const parserOpt = new Option("-p, --parser <parser>", "Which parser to use")
-    .choices(["latex-utensils", "unified-latex"])
+    .choices(["latex-utensils", "unified-latex", "unified-latex-minimal"])
     .makeOptionMandatory();
 
 const cli = new Command();
@@ -33,6 +34,9 @@ switch (parser) {
         break;
     case "unified-latex":
         console.log(JSON.stringify(parseByUnifiedLatex(content), undefined, "  "));
+        break;
+    case "unified-latex-minimal":
+        console.log(JSON.stringify(parseByUnifiedLatexMinimal(content), undefined, "  "));
         break;
     default:
         console.error(`Parser ${parser} is not supported`);
